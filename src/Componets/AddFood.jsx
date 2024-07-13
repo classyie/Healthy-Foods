@@ -1,7 +1,7 @@
 import styles from './AddFood.module.css'
-function AddFood({handleOnChange}) {
+function AddFood({handleKeyDown}) {
     return (
-        <input type="text" onChange={handleOnChange}/>
+        <input type="text" onKeyDown={handleKeyDown}/>
     );
 }
 
