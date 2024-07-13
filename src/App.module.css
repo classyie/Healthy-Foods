@@ -1,0 +1,10 @@
+.mainBox{
+    border: 2px solid gray;
+    width: 50%;
+    margin: 10px;
+    padding: 5px;
+}
+
+h1{
+    text-align: center;
+}
