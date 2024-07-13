@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import  styles from './App.module.css'
+import Container from './Componets/Container'
 import Foods from './Componets/Foods'
 import { useState } from 'react';
 import AddFood from './Componets/AddFood';
@@ -10,6 +11,7 @@ function App() {
     ,"Almonds",
     "Salmon",
     "Quinoa"]);
+  let [cartItem, setCartItem] = useState([]);
   function handleKeyDown(event){
     // console.log(event.target.value);  // Placeholder for handling any Key Click
     // console.log(event.key)
@@ -19,13 +21,19 @@ function App() {
       event.target.value = ''
     }
   }
+  function addItem(item){
+    setCartItem([...cartItem, item])
+  }
 
   return (
-    <div className={styles.mainBox}>
+    <>
+    <Container>
       <h1>Healthy Foods</h1>
       <AddFood handleKeyDown={handleKeyDown}/>
-      <Foods foodItems={foodItems}/>
-    </div>
+      <Foods foodItems={foodItems} addItem={addItem} btnOperation="Add"/>
+    </Container>
+
+    </>
   )
 }
 
