@@ -1,10 +1,10 @@
 // import styles from './Foods.module.css';
 import FoodItem from './FoodItem';
-function Foods({foodItems, addItem, btnOperation}) {    
+function Foods({foodItems, operationItem, btnOperation}) {    
     return (
         <ul className="list-group">
             {foodItems.map((item) => (
-                <FoodItem key={item} item={item} addItem={addItem} btnOperation = {btnOperation}/>
+                <FoodItem key={item} item={item} operationItem={operationItem} btnOperation = {btnOperation}/>
             ))}
             {/* <li className="list-group-item">Spinach</li>
             <li className="list-group-item">Blueberries</li>

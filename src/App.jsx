@@ -24,15 +24,24 @@ function App() {
   function addItem(item){
     setCartItem([...cartItem, item])
   }
+  function deleteItem(item){
+    setCartItem(cartItem.filter(i=>i!==item))
+  }
 
   return (
     <>
     <Container>
       <h1>Healthy Foods</h1>
       <AddFood handleKeyDown={handleKeyDown}/>
-      <Foods foodItems={foodItems} addItem={addItem} btnOperation="Add"/>
+      <Foods foodItems={foodItems} operationItem={addItem} btnOperation="Add"/>
     </Container>
-
+    <Container >
+      <h1>Shopping Cart</h1>
+      <Foods foodItems={cartItem} operationItem={deleteItem} btnOperation="Delete"/>
+      <button className="btn btn-primary">Checkout</button>
+      <button className="btn btn-danger">Clear Cart</button>
+      <p>Total: {cartItem.length} items</p>
+    </Container>
     </>
   )
 }
